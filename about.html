@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병무청</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/about.js"></script>
+</head>
+<body>
+    <!-- 정부배너 -->
+    <section id="govBanner">
+        <!-- 레이아웃 박스 -->
+        <div class="layout flex">
+            <img src="./img/Logo/태극기.svg" alt="Flag">
+            <span>이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+        </div> <!-- 레이아웃 박스 -->
+    </section> <!-- 정부배너 -->
+
+    <!-- 헤더 -->
+    <header>
+        <!-- 바로가기 -->
+        <ul id="hShortcut" class="layout flex fJustifyEnd marginBottom_20">
+            <li><a class="flex" href="#language">
+                <span>English</span>
+                <img class="icon_15" src="./img/Icon/Shortcut.svg" alt="Shortcut">
+            </a></li>
+            <li><a class="flex" href="#siteMap">
+                <span>누리집 안내지도</span>
+                <img class="icon_15" src="./img/Icon/Shortcut.svg" alt="Shortcut">
+            </a></li>
+        </ul> <!-- 바로가기 -->
+
+        <!-- 로고 및 검색창 -->
+        <div class="layout flex fJustifyBetween">
+            <a class="MMALogo" href="./index.html"><img src="./img/Logo/병무청.svg" alt="Logo"></a>
+            
+            <form id="search" class="flex fAlignCenter fJustifyBetween sidePadding_15" action="/search" method="get" name="searchForm">
+                <input type="text" placeholder="검색어를 입력해주세요" autocomplete="off">
+                <button type="submit"><p class="sr_only">Search button</p></button>
+            </form>
+        </div> <!-- 로고 및 검색창 -->
+    </header> <!-- 헤더 -->
+
+    <!-- 네비게이션 메뉴 -->
+    <nav>
+        <ul id="navMainList" class="layout flex"></ul>
+    </nav>
+
+    <!-- 본문 컨테이너 -->
+    <div id="container" class="layout flex">
+        <!-- 사이드 메뉴 -->
+        <section id="sideMenu" class="marginTop_80">
+            <!-- 제목 -->
+            <div class="flex fDirectionColumn fJustifyEnd">
+                <p>병무소식</p>
+                <p>NEWS</p>
+            </div> <!-- 제목 -->
+
+            <!-- 메뉴 목록 -->
+            <ul>
+                <li class="on"><a class="sidePadding_15" href="#">보도·설명자료</a></li>
+                <li><a class="sidePadding_15" href="#공지사항">공지사항</a></li>
+                <li><a class="sidePadding_15" href="#포토뉴스">포토뉴스</a></li>
+                <li><a class="sidePadding_15" href="#국정성과">주요 국정성과</a></li>
+                <li><a class="sidePadding_15" href="#국정성과목록">주요 국정성과 목록</a></li>
+                <li><a class="sidePadding_15" href="#제도">달라지는 제도</a></li>
+                <li><a class="sidePadding_15" href="#소식">지방청 소식</a></li>
+            </ul>
+        </section> <!-- 사이드 메뉴 -->
+
+        <!-- 본문 -->
+        <section id="main">
+            <!-- 현재 위치 -->
+            <div id="location" class="flex">
+                <img class="icon_20" src="./img/Sub/Icon/Home.svg" alt="Home">
+                <p>&gt;&nbsp;&nbsp;병무소식</p>
+                <p>&gt;&nbsp;&nbsp;공지사항</p>
+            </div> <!-- 현재 위치 -->
+
+            <!-- 본문 제목 -->
+            <h1 class="marginBottom_30">공지사항</h1>
+
+            <!-- 공지사항 세부내용 -->
+            <ul id="detail" class="marginBottom_30 grid">
+                <li class="gHeader fontM18 sidePadding_15">제목</li>
+                <li class="sidePadding_15 fontM18">민원인 승용차 5부제 시행('26.4.8.~) 안내</li>
+                <li class="gHeader fontM18 sidePadding_15">작성자</li>
+                <li class="sidePadding_15">운영지원과&lt;이동한, 1588-9090&gt;</li>
+                <li class="gHeader fontM18 sidePadding_15">작성일</li>
+                <li class="sidePadding_15">2026-04-07</li>
+                <li class="gHeader fontM18 sidePadding_15">수정일</li>
+                <li class="sidePadding_15">2026-04-07</li>
+                <li class="gHeader fontM18 sidePadding_15">조회수</li>
+                <li class="sidePadding_15">3846</li>
+            </ul>
+
+            <!-- 메인 이미지 -->
+            <img class="marginBottom_30" src="./img/Sub/Main.jpg" alt="Main">
+
+            <!-- 목록 버튼 -->
+            <button type="button" class="marginBottom_100 contentButton fontM18">목록</button>
+
+            <!-- 다음글, 이전글 -->
+            <ul id="movePost" class="grid marginBottom_30">
+                <li class="gHeader fontM18 sidePadding_15"><a href="#nextPost">다음글</a></li>
+                <li class="sidePadding_15"><a href="#nextPost">병무청 일반직공무원(의료기술직 임상심리사) 경력경쟁채용 공고</a></li>
+                <li class="gHeader fontM18 sidePadding_15"><a href="#prevPost">이전글</a></li>
+                <li class="sidePadding_15"><a href="#prevPoxt">병무청 일반임기제(전산주사보, 디지털포렌식 분석) 경력경쟁채용시험 추가합격자 공고 및 채용후보자 등록 안내</a></li>
+            </ul>
+
+            <!-- 병무민원상담 -->
+            <div id="complainCounsel" class="marginBottom_100">
+                <!-- 타이틀 -->
+                <ul class="flex fJustifyBetween sidePadding_15">
+                    <li class="fontM18">병무민원상담</li>
+                    <li class="flex">
+                        <img class="icon_15" src="./img/Sub/Icon/Call.svg" alt="Call">
+                        <p class="fontM18">1588-9090</p>
+                    </li>
+                </ul>
+
+                <!-- 내용 -->
+                <div>
+                    <!-- 만족도 조사 -->
+                    <div class="flex fAlignCenter fJustifyBetween marginBottom_30">
+                        <p class="fontM18">현재 페이지의 정보에 만족하십니까?</p>
+                        <form id="radioList">
+                            <label class="fAlignCenter" tabindex="0"><input type="radio" name="SatisfactionSurvey" value="5">&nbsp;&nbsp;매우만족</label>
+                            <label class="fAlignCenter" tabindex="0"><input type="radio" name="SatisfactionSurvey" value="4">&nbsp;&nbsp;만족</label>
+                            <label class="fAlignCenter" tabindex="0"><input type="radio" name="SatisfactionSurvey" value="3">&nbsp;&nbsp;보통</label>
+                            <label class="fAlignCenter" tabindex="0"><input type="radio" name="SatisfactionSurvey" value="2">&nbsp;&nbsp;불만족</label>
+                            <label class="fAlignCenter" tabindex="0"><input type="radio" name="SatisfactionSurvey" value="1">&nbsp;&nbsp;매우불만족</label>
+                        </form>
+                    </div>
+
+                    <!-- 텍스트 박스 -->
+                    <div id="textBox" class="flex fJustifyBetween">
+                        <textarea name="opinion" placeholder="기타 의견을 100자 내외로 적어주세요"></textarea>
+                        <button type="button" class="contentButton fontM18">반영</button>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- 본문 -->
+
+        <!-- 주요 누리집 -->
+        <section id="mainWebSite" class="marginTop_80">
+            <h2 class="marginBottom_30 fontM18">주요누리집 바로가기</h2>
+            <ul id="mainWebSiteList"></ul>
+        </section>
+    </div> <!-- 본문 컨테이너 -->
+
+    <!-- 패밀리사이트 -->
+    <section id="familySite">
+        <div class="layout">
+            <ul id="familySiteList" class="flex"></ul>
+        </div>
+    </section> <!-- 패밀리사이트 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <!-- 레이아웃 -->
+        <div class="layout">
+            <div class="flex fJustifyBetween marginBottom_30">
+                <!-- 로고 및 주소 -->
+                <ul id="logoAddress" class="flex fDirectionColumn">
+                    <li class="MMALogo"><a href="./index.html"><img src="./img/Logo/병무청.svg" alt="Logo"></a></li>
+                    <li>(우) 35208 대전광역시 서구 청사로 189, 정부대전청사 2동</li>
+                    <li>대표전화 1588-9090(유료, 평일 09시~18시)</li>
+                </ul>
+    
+                <!-- 바로가기 및 SNS -->
+                <ul id="shortcutSNS" class="flex fDirectionColumn fJustifyEnd">
+                    <!-- 바로가기 -->
+                    <li><a class="fAlignCenter" href="#siteMap">
+                        <span>누리집 안내지도</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li>
+                    <li><a class="fAlignCenter" href="#찾아오는길">
+                        <span>찾아오시는 길</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li>
+                    <li><a class="fAlignCenter" href="#이용안내">
+                        <span>이용안내</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li>
+                    <li><a class="fAlignCenter" href="#프로그램내려받기">
+                        <span>프로그램 내려받기</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li> <!-- 바로가기 -->
+                    <!-- SNS -->
+                    <li>
+                        <ul class="flex">
+                            <li><a href="#Facebook">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Facebook.svg" alt="Facebook">
+                            </a></li>
+                            <li><a href="#Instagram">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Instagram.svg" alt="Instagram">
+                            </a></li>
+                            <li><a href="#Blog">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Blog.svg" alt="Blog">
+                            </a></li>
+                            <li><a href="#Youtube">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Youtube.svg" alt="Youtube">
+                            </a></li>
+                        </ul>
+                    </li> <!-- SNS -->
+                </ul>
+            </div>
+            <div class="flex fAlignCenter fJustifyBetween">
+                <!-- 푸터 메뉴 -->
+                <ul id="footerMenu" class="flex">
+                    <li><a id="keepStyle" href="#개인정보처리방침">개인정보처리방침</a></li>
+                    <li><a href="#저작권정책">저작권 정책</a></li>
+                    <li><a href="#병무민원현장">병무민원 현장</a></li>
+                    <li><a href="#누리집오류신고">누리집 오류신고</a></li>
+                </ul> <!-- 푸터메뉴 -->
+
+                <!-- 카피라이트 -->
+                <span>Copyrightⓒ Military Manpower Administration. All Rights Reserve</span>
+            </div>
+        </div><!-- 레이아웃 -->
+    </footer> <!-- 푸터 -->
+</body>
+</html>

@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+/* Flex */
+.fJustifyCenter { justify-content: center; }
+
+/* ------------------------------ */
+
+/* margin */
+.marginBottom_50 { margin-bottom: 50px; }
+
+/* ------------------------------ */
+
+/* 페이지 제목 */
+.pTitle {
+    font-size: var(--font-size-30px);
+    font-weight: var(--font-weight-Bold);
+    text-align: center;
+}
+
+/* ------------------------------ */
+
+/* 원 메뉴 목록 */
+.circleMenuList {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* 원 메뉴 항목 */
+.circleMenuList > li > a { position: relative; }
+
+/* 원 메뉴 항목 이미지 박스 */
+.circleMenuList > li > a > div {
+    position: relative;
+    width: 100px; height: 100px;
+    border-radius: 100%;
+    background-color: var(--main-color);
+}
+
+/* 원 메뉴 항목 텍스트 */
+.circleMenuList > li > a > p {
+    position: absolute;
+    top: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* 원 메뉴 마우스 효과 */
+.circleMenuList > li > a:hover > div,
+.circleMenuList > li > a:focus-visible > div { background-color: var(--sub-color); }
+
+/* ------------------------------ */
+
+/* 첫 페이지 */
+#firstPage {
+    padding: 50px 0;
+    background: url("../img/Home/BackgroundImage.jpg") no-repeat center / cover;
+}
+
+/* 이미지 슬라이드 */
+#imageSlide {
+    position: relative;
+    width: 924px;
+    overflow: hidden;
+}
+
+/* 이미지 슬라이드 리모컨 */
+#imageSlide > ul:last-child {
+    gap: 15px;
+    position: absolute;
+    right: 15px; bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 이미지 슬라이드 리모컨 항목 */
+#imageSlide > ul:last-child > li > button { width: 30px; height: 30px; }
+#imageSlide > ul:last-child > li:nth-child(2) > button { background: url("../img/Home/ImageSlideRemote/Prev.svg") no-repeat center / cover; }
+#imageSlide > ul:last-child > li:nth-child(3) > button { background: url("../img/Home/ImageSlideRemote/Pause.svg") no-repeat center / cover; }
+#imageSlide > ul:last-child > li:nth-child(4) > button { background: url("../img/Home/ImageSlideRemote/Next.svg") no-repeat center / cover; }
+#imageSlide > ul:last-child > li:nth-child(5) > button { background: url("../img/Home/ImageSlideRemote/All.svg") no-repeat center / cover; }
+
+/* 슬라이드 이미지 전체보기 오버레이 */
+#allView {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+/* 오버레이 상자를 중앙으로 배치하기 위한 요소 */
+#allView > div { height: 100vh; }
+
+/* 오버레이 상자 */
+#imageBox {
+    display: none;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--white-color);
+}
+
+/* 이미지 목록 */
+#imageBox > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 462px);
+    grid-template-rows: repeat(2, 200px);
+    grid-gap: 20px;
+}
+
+/* 이미지 항목 */
+#imageBox > ul > li > a > img { width: 100%; height: 100%; }
+
+/* 오버레이 닫기 버튼 */
+#imageBox > button {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 20px; height: 20px;
+}
+
+/* 청장민원 */
+#complain {
+    width: 448px; height: 400px;
+    background-color: var(--main-color);
+}
+
+/* 청장민원 제목 */
+#complain > h1 {
+    padding: 30px 0;
+    font-size: var(--font-size-30px);
+    font-weight: var(--font-weight-Bold);
+    text-align: center;
+}
+
+/* 청장민원 바로가기 목록 */
+#complain > div > ul {
+    gap: 10px;
+    margin: 0 15px 15px 0;
+}
+
+/* 청장민원 인사말 */
+#complain > div > ul > li:first-child {
+    font-family: 'NanumSquareNeoBold';
+    font-size: var(--font-size-18px);
+}
+
+/* 청장민원 바로가기 항목 */
+#complain > div > ul > li:not(:first-child) {
+    border-radius: 10px;
+    background-color: var(--sub-color);
+}
+
+#complain > div > ul > li:not(:first-child) > a {
+    color: var(--white-color);
+    line-height: 40px;
+}
+
+/* 청장민원 바로가기 항목 마우스 효과 */
+#complain > div > ul > li:hover > a,
+#complain > div > ul > li:focus-visible > a { text-decoration: underline; }
+
+/* ------------------------------ */
+
+/* 자주 찾는 서비스 */
+#service {
+    padding: 30px;
+    border: 1px solid var(--sub-color);
+    border-radius: 10px;
+}
+
+/* 탭 메뉴 */
+#serviceTab { gap: 15px; }
+
+#serviceTab > li {
+    padding: 0 20px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    font-size: var(--font-size-18px);
+    line-height: 40px;
+    cursor: pointer;
+}
+
+/* 탭 메뉴 마우스 효과 및 활성화 효과 */
+#serviceTab > li:hover,
+#serviceTab > li:focus-visible,
+#serviceTab > li.on { background-color: var(--sub-color); color: var(--white-color); }
+
+/* 메뉴 상자 */
+#serviceBox { gap: 35px; }
+
+/* 메뉴 버튼 */
+#serviceBox > button > svg { width: 15px; }
+
+/* 메뉴 버튼 마우스 효과 */
+#serviceBox > button:hover > svg,
+#serviceBox > button:focus-visible > svg { fill: var(--sub-color); }
+
+/* 메뉴 목록 상자 */
+#serviceBox > div {
+    width: 1000px; height: 135px;
+    overflow: hidden;
+}
+
+/* 메뉴 목록 */
+.serviceMenuList:first-child { justify-content: flex-start; }
+.serviceMenuList.none { display: none; }
+
+/* ------------------------------ */
+
+/* 알림판 */
+
+/* 게시글 컨테이너 */
+.notiContainer { width: 567px; }
+
+/* 탭 메뉴 */
+.notiTab > li {
+    width: 150px;
+    cursor: pointer;
+}
+
+.notiTab > li > span { line-height: 40px; }
+
+/* 탭 메뉴마우스 효과 */
+.notiTab > li:hover > svg,
+.notiTab > li:focus-visible > svg { fill: var(--black-color); }
+
+/* 탭 메뉴 활성화 */
+.notiTab > li.on { position: relative; }
+.notiTab > li.on > svg { fill: var(--black-color); }
+
+/* 게시글 박스 */
+.postBox {
+    height: 170px;
+    padding: 15px;
+    border-top: 1px solid var(--sub-color);
+    background-color: var(--light-gray-color);
+}
+
+/* 게시글 목록 */
+.postBox > li { display: none; height: 100%; }
+.postBox > li.on { display: block; }
+.postList { height: 100%; }
+
+/* 게시글 항목 */
+.postList > li > a { align-items: end; cursor: pointer; }
+
+/* 게시글 항목 마우스 효과 */
+.postList > li:hover > a > p:first-child,
+.postList > li:focus-visible > a > p:first-child { text-decoration: underline; }
+
+/* 각 탭별 게시글 제목 */
+.postList > li > a > p:first-child {
+    width: 400px;
+    overflow: hidden;
+    font-size: var(--font-size-18px);    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 각 탭별 게시글 날짜 */
+.postList > li > a > p:last-child {
+    font-size: var(--font-size-12px);
+    color: var(--line-color);
+}
+
+/* ------------------------------ */
+
+/* 소통 채널 */
+
+/* 메뉴 목록 */
+#communication > ul:nth-child(2) { margin-bottom: 65px; }
+
+/* SNS */
+#snsList > li > a {
+    gap: 10px;
+    width: 269.5px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    line-height: 50px;
+}
+
+/* SNS 마우스 효과 */
+#snsList > li > a:hover,
+#snsList > li > a:focus-visible { background-color: var(--sub-color); }
+#snsList > li > a:hover > span,
+#snsList > li > a:focus-visible > span { color: var(--white-color); }
+
+/* ------------------------------ */
+
+/* 배너 모음 */
+#banner { background-color: var(--light-gray-color); }
+
+/* 배너 모음 제목 */
+#bannerTitle > a > span {
+    margin-right: 5px;
+    font-size: var(--font-size-20px);
+    font-weight: var(--font-weight-Medium);
+}
+
+/* 배너 모음 리모컨 */
+#bannerRemote { gap: 10px; }
+
+/* 배너 모음 리모컨 버튼 */
+#bannerRemote > li > button { width: 10px; height: 15px; }
+#bannerRemote > li:nth-child(1) > button { background: url("../img/Home/BannerCollectionRemote/Prev.svg") no-repeat center / cover; }
+#bannerRemote > li:nth-child(2) > button { background: url("../img/Home/BannerCollectionRemote/Pause.svg") no-repeat center / cover; }
+#bannerRemote > li:nth-child(3) > button { background: url("../img/Home/BannerCollectionRemote/Next.svg") no-repeat center / cover; }
+
+/* 배너 목록 상자 */
+#bannerTextListBox { width: 1200px; overflow: hidden; }
+
+/* 배너 목록 */
+#bannerTextList { gap: 24px; }
+
+/* 배너 텍스트 */
+#bannerTextList > li {
+    flex-shrink: 0;
+    width: 180px; height: 50px;
+    text-align: center;
+}
+
+#bannerTextList > li > a { width: 100%; }
+
+/* 배너 텍스트 마우스 효과 */
+#bannerTextList > li:hover > a,
+#bannerTextList > li:focus-visible > a { text-decoration: underline; }

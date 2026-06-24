@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>병무청</title>
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <!-- 나눔스퀘어 네오 폰트 -->
+    <!-- font-family: 'NanumSquareNeoLight'; -->
+    <!-- font-family: 'NanumSquareNeo'; -->
+    <!-- font-family: 'NanumSquareNeoBold'; -->
+    <!-- font-family: 'NanumSquareNeoExtraBold'; -->
+    <!-- font-family: 'NanumSquareNeoHeavy'; -->
+    <!-- 이런식으로 설정 -->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/public.js"></script>
+    <script src="./js/home.js"></script>
+</head>
+<body>
+    <!-- 정부배너 -->
+    <section id="govBanner">
+        <!-- 레이아웃 박스 -->
+        <div class="layout flex">
+            <img src="./img/Logo/태극기.svg" alt="Flag">
+            <span>이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+        </div> <!-- 레이아웃 박스 -->
+    </section> <!-- 정부배너 -->
+
+    <!-- 헤더 -->
+    <header>
+        <!-- 바로가기 -->
+        <ul id="hShortcut" class="layout flex fJustifyEnd marginBottom_20">
+            <li><a class="flex" href="#language">
+                <span>English</span>
+                <img class="icon_15" src="./img/Icon/Shortcut.svg" alt="Shortcut">
+            </a></li>
+            <li><a class="flex" href="#siteMap">
+                <span>누리집 안내지도</span>
+                <img class="icon_15" src="./img/Icon/Shortcut.svg" alt="Shortcut">
+            </a></li>
+        </ul> <!-- 바로가기 -->
+
+        <!-- 로고 및 검색창 -->
+        <div class="layout flex fJustifyBetween">
+            <a class="MMALogo" href="#home"><img src="./img/Logo/병무청.svg" alt="Logo"></a>
+            
+            <form id="search" class="flex fAlignCenter fJustifyBetween sidePadding_15" action="/search" method="get" name="searchForm">
+                <input type="text" placeholder="검색어를 입력해주세요" autocomplete="off">
+                <button type="submit"><p class="sr_only">Search button</p></button>
+            </form>
+        </div> <!-- 로고 및 검색창 -->
+    </header> <!-- 헤더 -->
+
+    <!-- 네비게이션 메뉴 -->
+    <nav>
+        <ul id="navMainList" class="layout flex"></ul>
+    </nav>
+
+    <!-- 첫 페이지 -->
+    <section id="firstPage" class="marginBottom_50">
+        <!-- 레이아웃 박스 -->
+        <div class="layout flex fJustifyBetween">
+            <!-- 이미지 슬라이드 -->
+            <div id="imageSlide">
+                <!-- 슬라이드 이미지 -->
+                <ul class="flex">
+                    <li data-index="01"><a tabindex="-1" href="./about.html">
+                        <img src="./img/Home/SlideImage/Slide1.jpg" alt="Slide1">
+                    </a></li>
+                    <li data-index="02"><a tabindex="-1" href="#문자훈련">
+                        <img src="./img/Home/SlideImage/Slide2.jpg" alt="Slide2">
+                    </a></li>
+                    <li data-index="03"><a tabindex="-1" href="#검사장휴무">
+                        <img src="./img/Home/SlideImage/Slide3.jpg" alt="Slide3">
+                    </a></li>
+                    <li data-index="04"><a tabindex="-1" href="#국정과제">
+                        <img src="./img/Home/SlideImage/Slide4.jpg" alt="Slide4">
+                    </a></li>
+                </ul> <!-- 슬라이드 이미지 -->
+
+                <!-- 이미지 슬라이드 리모컨 -->
+                <ul class="flex fAlignCenter">
+                    <li>01/04</li>
+                    <li><button type="button"><span class="sr_only">Prev</span></button></li>
+                    <li><button type="button"><span class="sr_only">Pause</span></button></li>
+                    <li><button type="button"><span class="sr_only">Next</span></button></li>
+                    <li><button type="button"><span class="sr_only">All</span></button></li>
+                </ul>
+            </div> <!-- 이미지 슬라이드 -->
+
+            <!-- 슬라이드 이미지 전체보기 오버레이 -->
+            <div id="allView">
+                <div class="flex fAlignCenter fJustifyCenter">
+                    <div id="imageBox">
+                        <h1 class="fontM20 marginBottom_20">전체 슬라이드 배너</h1>
+                        
+                        <ul>
+                            <li><a href="./about.html">
+                                <img src="./img/Home/SlideImage/Slide1.jpg" alt="Slide1">
+                            </a></li>
+                            <li><a href="#문자훈련">
+                                <img src="./img/Home/SlideImage/Slide2.jpg" alt="Slide2">
+                            </a></li>
+                            <li><a href="#검사장휴무">
+                                <img src="./img/Home/SlideImage/Slide3.jpg" alt="Slide3">
+                            </a></li>
+                            <li><a href="#국정과제">
+                                <img src="./img/Home/SlideImage/Slide4.jpg" alt="Slide4">
+                            </a></li>
+                        </ul>
+    
+                        <button type="button">
+                            <p class="sr_only">Close</p>
+                            <svg viewBox="0 0 20 20" fill="#000">
+                                <path d="M18.6.2l-8.6,8.6L1.4.2c-.3-.3-.9-.3-1.2,0s-.3.9,0,1.2l8.6,8.6L.2,18.6c-.3.3-.3.9,0,1.2s.9.3,1.2,0l8.6-8.6,8.6,8.6c.3.3.9.3,1.2,0s.3-.9,0-1.2l-8.6-8.6L19.8,1.4c.3-.3.3-.9,0-1.2s-.9-.3-1.2,0Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div> <!-- 슬라이드 이미지 전체보기 오버레이 -->
+
+            <!-- 청장민원 -->
+            <div id="complain" class="flex fDirectionColumn fJustifyBetween">
+                <h1>국민이 공감하는 확실한 변화로<br>공정한 병무행정을 확립하겠습니다.</h1>
+
+                <div class="flex fJustifyBetween">
+                    <img src="./img/Home/Director.png" alt="Director">
+    
+                    <ul class="flex fDirectionColumn fJustifyEnd">
+                        <li>안녕하세요<br>병무청장 홍소영입니다.</li>
+                        <li><a class="sidePadding_15" href="#열린청장실">열린청장실 바로가기</a></li>
+                        <li><a class="sidePadding_15" href="#청장민원">청장에게 바란다</a></li>
+                    </ul>
+                </div>
+            </div> <!-- 청장민원 -->
+        </div> <!-- 레이아웃 박스 -->
+    </section> <!-- 첫 페이지 -->
+
+    <!-- 자주 찾는 서비스 -->
+    <section id="service" class="subLayout marginBottom_100">
+        <!-- 제목 -->
+        <h2 class="pTitle marginBottom_30">자주 찾는 서비스</h2>
+
+        <!-- 탭 메뉴 -->
+        <ul id="serviceTab" class="flex fJustifyCenter marginBottom_30">
+            <li class="on" tabindex="0">병역이행안내</li>
+            <li tabindex="0">병무민원</li>
+            <li tabindex="0">민원상담</li>
+        </ul> <!-- 탭 메뉴 -->
+
+        <!-- 메뉴 목록 박스 -->
+        <div id="serviceBox" class="flex">
+            <!-- 이전 버튼 -->
+            <button type="button">
+                <p class="sr_only">이전</p>
+                <svg viewBox="0 0 16 32" fill="#000">
+                    <path d="M15.7,31.62h0c-.4.5-1.2.5-1.6,0L.3,16.9H.3c-.4-.5-.4-1.3,0-1.7L14,.38c.4-.5,1.2-.5,1.6,0,.4.5.4,1.3,0,1.7L2.8,16l12.9,13.92h0c.4.5.4,1.3,0,1.7"/>
+                </svg>
+            </button> <!-- 이전 버튼 -->
+
+            <div>
+                <!-- 병역이행안내 메뉴 -->
+                <ul class="serviceMenuList circleMenuList"></ul>
+    
+                <!-- 병무민원 메뉴 -->
+                <ul class="serviceMenuList circleMenuList none"></ul>
+    
+                <!-- 민원상담 메뉴 -->
+                <ul class="serviceMenuList circleMenuList none"></ul>
+            </div>
+
+            <!-- 다음 버튼 -->
+            <button type="button">
+                <p class="sr_only">다음</p>
+                <svg viewBox="0 0 16 32" fill="#000">
+                    <path d="M.3,31.62c-.4-.5-.4-1.3,0-1.7H.3l12.98-13.94L.3,2.04C-.1,1.54-.1.74.3.34.7-.06,1.51-.16,1.91.34l13.79,14.84c.4.5.4,1.3,0,1.7h0L2.01,31.62c-.5.5-1.21.5-1.71,0H.3"/>
+                </svg>
+            </button> <!-- 다음 버튼 -->
+        </div>
+    </section> <!-- 자주 찾는 서비스 -->
+
+    <!-- 알림판 -->
+    <section class="subLayout marginBottom_100">
+        <!-- 제목 -->
+        <h2 class="pTitle marginBottom_30">알림판</h2>
+
+        <!-- 게시글 박스 -->
+        <ul class="flex fJustifyBetween">
+            <!-- 첫 번째 박스 -->
+            <li class="notiContainer">
+                <!-- 카테고리 -->
+                <ul id="firstNotiTab" class="notiTab flex">
+                    <li class="flex fJustifyBetween sidePadding_15 underline on" tabindex="0">
+                        <span class="fontM20">공지사항</span>
+                        <svg class="icon_15" viewBox="0 0 15 15" fill="#ccc">
+                            <path d="M7.5,0c.52,0,.94.42.94.94v5.62h5.62c.52,0,.94.42.94.94s-.42.94-.94.94h-5.62v5.62c0,.52-.42.94-.94.94s-.94-.42-.94-.94v-5.62H.94c-.52,0-.94-.42-.94-.94s.42-.94.94-.94h5.62V.94c0-.52.42-.94.94-.94"/>
+                        </svg>
+                    </li>
+                    <li class="flex fJustifyBetween sidePadding_15 underline" tabindex="0">
+                        <span class="fontM20">보도자료</span>
+                        <svg class="icon_15" viewBox="0 0 15 15" fill="#ccc">
+                            <path d="M7.5,0c.52,0,.94.42.94.94v5.62h5.62c.52,0,.94.42.94.94s-.42.94-.94.94h-5.62v5.62c0,.52-.42.94-.94.94s-.94-.42-.94-.94v-5.62H.94c-.52,0-.94-.42-.94-.94s.42-.94.94-.94h5.62V.94c0-.52.42-.94.94-.94"/>
+                        </svg>
+                    </li>
+                </ul> <!-- 카테고리 -->
+
+                <!-- 게시글 목록 -->
+                <ul id="firstPostBox" class="postBox"></ul>
+            </li> <!-- 첫 번째 박스 -->
+
+            <!-- 두 번째 박스 -->
+            <li class="notiContainer">
+                <!-- 카테고리 -->
+                <ul id="secondNotiTab" class="notiTab flex">
+                    <li class="flex fJustifyBetween sidePadding_15 underline on" tabindex="0">
+                        <span class="fontM20">법령정보</span>
+                        <svg class="icon_15" viewBox="0 0 15 15" fill="#ccc">
+                            <path d="M7.5,0c.52,0,.94.42.94.94v5.62h5.62c.52,0,.94.42.94.94s-.42.94-.94.94h-5.62v5.62c0,.52-.42.94-.94.94s-.94-.42-.94-.94v-5.62H.94c-.52,0-.94-.42-.94-.94s.42-.94.94-.94h5.62V.94c0-.52.42-.94.94-.94"/>
+                        </svg>
+                    </li>
+                    <li class="flex fJustifyBetween sidePadding_15 underline" tabindex="0">
+                        <span class="fontM20">바뀌는 제도</span>
+                        <svg class="icon_15" viewBox="0 0 15 15" fill="#ccc">
+                            <path d="M7.5,0c.52,0,.94.42.94.94v5.62h5.62c.52,0,.94.42.94.94s-.42.94-.94.94h-5.62v5.62c0,.52-.42.94-.94.94s-.94-.42-.94-.94v-5.62H.94c-.52,0-.94-.42-.94-.94s.42-.94.94-.94h5.62V.94c0-.52.42-.94.94-.94"/>
+                        </svg>
+                    </li>
+                    <li class="flex fJustifyBetween sidePadding_15 underline" tabindex="0">
+                        <span class="fontM20">국정성과</span>
+                        <svg class="icon_15" viewBox="0 0 15 15" fill="#ccc">
+                            <path d="M7.5,0c.52,0,.94.42.94.94v5.62h5.62c.52,0,.94.42.94.94s-.42.94-.94.94h-5.62v5.62c0,.52-.42.94-.94.94s-.94-.42-.94-.94v-5.62H.94c-.52,0-.94-.42-.94-.94s.42-.94.94-.94h5.62V.94c0-.52.42-.94.94-.94"/>
+                        </svg>
+                    </li>
+                </ul> <!-- 카테고리 -->
+
+                <!-- 게시글 목록 -->
+                <ul id="secondPostBox" class="postBox"></ul>
+            </li> <!-- 두 번째 박스 -->
+        </ul> <!-- 게시글 박스 -->
+    </section> <!-- 알림판 -->
+
+    <!-- 소통채널 -->
+    <section id="communication" class="subLayout marginBottom_100">
+        <!-- 제목 -->
+        <h2 class="pTitle marginBottom_30">소통채널</h2>
+
+        <!-- 메뉴 목록 -->
+        <ul class="circleMenuList">
+            <li><a href="#사진으로본병무사">
+                <div><img class="center" src="./img/Home/소통채널/Menu/사진으로 본 병무사.png" alt="사진으로본병무사"></div>
+                <p>사진으로 본 병무사</p>
+            </a></li>
+            <li><a href="#병무역사기록전시관">
+                <div><img class="center" src="./img/Home/소통채널/Menu/병무역사기록전시관.png" alt="병무역사기록전시관"></div>
+                <p>병무역사기록전시관</p>
+            </a></li>
+            <li><a href="#청춘예찬">
+                <div><img class="center" src="./img/Home/소통채널/Menu/청춘예찬.jpg" alt="청춘예찬"></div>
+                <p>청춘예찬(기관사보)</p>
+            </a></li>
+            <li><a href="#병역이야기공모전">
+                <div><img class="center" src="./img/Home/소통채널/Menu/병역이야기 공모전.png" alt="병역이야기공모전"></div>
+                <p>병역이야기 공모전</p>
+            </a></li>
+            <li><a href="#응원메시지보내기">
+                <div><img class="center" src="./img/Home/소통채널/Menu/응원메시지 보내기.jpg" alt="응원메시지보내기"></div>
+                <p>응원메시지 보내기</p>
+            </a></li>
+        </ul> <!-- 메뉴 목록 -->
+
+        <!-- SNS 목록 -->
+        <ul id="snsList" class="subLayout flex fJustifyBetween">
+            <li><a class="flex fAlignCenter fJustifyCenter" href="#Facebook">
+                <img src="./img/Home/소통채널/SNS/Facebook.png" alt="Facebook">
+                <span>페이스북</span>
+            </a></li>
+            <li><a class="flex fAlignCenter fJustifyCenter" href="#Instagram">
+                <img src="./img/Home/소통채널/SNS/Instagram.png" alt="Instagram">
+                <span>인스타그램</span>
+            </a></li>
+            <li><a class="flex fAlignCenter fJustifyCenter" href="#Blog">
+                <img src="./img/Home/소통채널/SNS/Blog.png" alt="Blog">
+                <span>네이버 블로그</span>
+            </a></li>
+            <li><a class="flex fAlignCenter fJustifyCenter" href="#Youtube">
+                <img src="./img/Home/소통채널/SNS/Youtube.png" alt="Youtube">
+                <span>유튜브</span>
+            </a></li>
+        </ul> <!-- SNS 목록 -->
+    </section> <!-- 소통채널 -->
+
+    <!-- 배너모음 -->
+    <section id="banner">
+        <!-- 레이아웃 -->
+        <div class="layout flex fAlignCenter fJustifyBetween">
+            <!-- 배너모음 제목 -->
+            <div id="bannerTitle">
+                <a href="#배너모음">
+                    <span>배너모음</span>
+                    <img class="icon_15" src="./img/Home/Add.svg" alt="Add">
+                </a>
+            </div> <!-- 배너모음 제목 -->
+
+            <!-- 배너모음 리모컨 -->
+            <ul id="bannerRemote" class="flex">
+                <li><button type="button"><span class="sr_only">Prev</span></button></li>
+                <li><button type="button"><span class="sr_only">Pause</span></button></li>
+                <li><button type="button"><span class="sr_only">Next</span></button></li>
+            </ul> <!-- 배너모음 리모컨 -->
+
+            <!-- 배너모음 배너 텍스트 -->
+            <div id="bannerTextListBox">
+                <ul id="bannerTextList" class="flex"></ul>
+            </div>
+        </div> <!-- 레이아웃 -->
+    </section> <!-- 배너모음 -->
+
+    <!-- 패밀리사이트 -->
+    <section id="familySite">
+        <div class="layout">
+            <ul id="familySiteList" class="flex"></ul>
+        </div>
+    </section> <!-- 패밀리사이트 -->
+
+    <!-- 푸터 -->
+    <footer>
+        <!-- 레이아웃 -->
+        <div class="layout">
+            <div class="flex fJustifyBetween marginBottom_30">
+                <!-- 로고 및 주소 -->
+                <ul id="logoAddress" class="flex fDirectionColumn">
+                    <li class="MMALogo"><a href="#home"><img src="./img/Logo/병무청.svg" alt="Logo"></a></li>
+                    <li>(우) 35208 대전광역시 서구 청사로 189, 정부대전청사 2동</li>
+                    <li>대표전화 1588-9090(유료, 평일 09시~18시)</li>
+                </ul>
+    
+                <!-- 바로가기 및 SNS -->
+                <ul id="shortcutSNS" class="flex fDirectionColumn fJustifyEnd">
+                    <!-- 바로가기 -->
+                    <li><a class="fAlignCenter" href="#siteMap">
+                        <span>누리집 안내지도</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li>
+                    <li><a class="fAlignCenter" href="#찾아오는길">
+                        <span>찾아오시는 길</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li>
+                    <li><a class="fAlignCenter" href="#이용안내">
+                        <span>이용안내</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li>
+                    <li><a class="fAlignCenter" href="#프로그램내려받기">
+                        <span>프로그램 내려받기</span>
+                        <img class="footerShortcut" src="./img/Icon/FooterShortcut.svg" alt="Footer shortcut">
+                    </a></li> <!-- 바로가기 -->
+                    <!-- SNS -->
+                    <li>
+                        <ul class="flex">
+                            <li><a href="#Facebook">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Facebook.svg" alt="Facebook">
+                            </a></li>
+                            <li><a href="#Instagram">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Instagram.svg" alt="Instagram">
+                            </a></li>
+                            <li><a href="#Blog">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Blog.svg" alt="Blog">
+                            </a></li>
+                            <li><a href="#Youtube">
+                                <img class="icon_20 center" src="./img/Logo/FooterSNS/Youtube.svg" alt="Youtube">
+                            </a></li>
+                        </ul>
+                    </li> <!-- SNS -->
+                </ul>
+            </div>
+            <div class="flex fAlignCenter fJustifyBetween">
+                <!-- 푸터 메뉴 -->
+                <ul id="footerMenu" class="flex">
+                    <li><a id="keepStyle" href="#개인정보처리방침">개인정보처리방침</a></li>
+                    <li><a href="#저작권정책">저작권 정책</a></li>
+                    <li><a href="#병무민원현장">병무민원 현장</a></li>
+                    <li><a href="#누리집오류신고">누리집 오류신고</a></li>
+                </ul> <!-- 푸터메뉴 -->
+
+                <!-- 카피라이트 -->
+                <span>Copyrightⓒ Military Manpower Administration. All Rights Reserve</span>
+            </div>
+        </div><!-- 레이아웃 -->
+    </footer> <!-- 푸터 -->
+</body>
+</html>

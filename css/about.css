@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+/* margin */
+.marginTop_80 { margin-top: 80px; }
+
+/* 목록, 반영 버튼 */
+.contentButton {
+    width: 90px;
+    background-color: var(--main-color);
+    line-height: 40px;
+}
+
+.contentButton:hover,
+.contentButton:focus-visible { background-color: var(--sub-color); color: var(--white-color); }
+
+/* 그리드 관련 */
+.grid {
+    display: grid;
+    gap: 1px;
+    padding: 1px;
+    background-color: var(--line-color);
+}
+
+.grid > li {
+    overflow: hidden;
+    line-height: 50px;
+}
+
+.grid > li:not(.gHeader) { background-color: var(--white-color); }
+
+.gHeader { background-color: var(--light-gray-color); }
+
+/* ------------------------------ */
+
+/* 본문 전체 컨테이너 */
+#container { gap: 28px; align-items: flex-start; }
+
+/* ------------------------------ */
+
+/* 사이드 메뉴 */
+#sideMenu { width: 329px; }
+
+/* 타이틀 */
+#sideMenu > div {
+    height: 120px;
+    padding: 15px;
+    background: url("../img/Sub/Side\ menu\ title.png") no-repeat center / cover;
+}
+
+#sideMenu > div > p { font-weight: var(--font-weight-Bold); color: var(--white-color); }
+#sideMenu > div > p:first-child { font-size: var(--font-size-30px); }
+#sideMenu > div > p:last-child { font-size: var(--font-size-20px); }
+
+/* 메뉴 항목 */
+#sideMenu > ul > li { border: 1px solid var(--line-color); }
+#sideMenu > ul > li:not(:last-child) { border-bottom: none; }
+
+#sideMenu > ul > li > a {
+    width: 100%;
+    background: url("../img/Sub/Icon/SideMenuArrow.svg") no-repeat calc(100% - 15px) / 8px;
+    font-size: var(--font-size-18px);
+    line-height: 50px;
+}
+
+/* 메뉴 항목 마우스 효과 */
+#sideMenu > ul > li.on,
+#sideMenu > ul > li:hover,
+#sideMenu > ul > li:focus-visible {
+    border: none;
+    background-color: var(--sub-color);
+    color: var(--white-color);
+}
+
+/* ------------------------------ */
+
+/* 본문 */
+#main { width: 805px; }
+
+/* 현재 위치 */
+#location { gap: 10px; margin: 30px 0; }
+
+/* 제목 */
+#main > h1 {
+    border-bottom: 1px solid var(--line-color);
+    font-size: 40px;
+    font-weight: var(--font-weight-Bold);
+    line-height: 140px;
+}
+
+/* 세부 내용 */
+#detail {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "dTitle dTitleContent dTitleContent dTitleContent dTitleContent dTitleContent"
+        "dWriter dWriterContent dWriterContent dWriterContent dWriterContent dWriterContent"
+        "dDate dDateContent dEdit dEditContent dView dViewContent";
+}
+
+/* 세부 내용 항목 */
+#detail > li:nth-child(1) { grid-area: dTitle; }
+#detail > li:nth-child(2) { grid-area: dTitleContent; }
+#detail > li:nth-child(3) { grid-area: dWriter; }
+#detail > li:nth-child(4) { grid-area: dWriterContent; }
+#detail > li:nth-child(5) { grid-area: dDate; }
+#detail > li:nth-child(6) { grid-area: dDateContent; }
+#detail > li:nth-child(7) { grid-area: dEdit; }
+#detail > li:nth-child(8) { grid-area: dEditContent; }
+#detail > li:nth-child(9) { grid-area: dView; }
+#detail > li:nth-child(10) { grid-area: dViewContent; }
+
+/* 목록 버튼 */
+#main > button { margin-left: calc(100% - 90px); }
+
+/* 글 이동 */
+#movePost {
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+/* 글 이동 항목 */
+#movePost > .gHeader:first-child { background: var(--light-gray-color) url("../img/Sub/Icon/moveNextPost.svg") no-repeat calc(100% - 15px) / 16px; }
+#movePost > .gHeader:nth-child(3) { background: var(--light-gray-color) url("../img/Sub/Icon/movePrevPost.svg") no-repeat calc(100% - 15px) / 16px; }
+
+#movePost > li:last-child > a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#movePost > li:nth-child(even):hover,
+#movePost > li:nth-child(even):focus-visible { text-decoration: underline; }
+#movePost > li:nth-child(odd):hover + li,
+#movePost > li:nth-child(odd):focus-visible + li { text-decoration: underline; }
+
+/* 병무민원상담 */
+#complainCounsel { border: 1px solid var(--line-color); }
+
+/* 타이틀 */
+#complainCounsel > ul {
+    border-bottom: 1px solid var(--line-color);
+    background-color: var(--light-gray-color);
+    line-height: 40px;
+}
+
+#complainCounsel > ul > li:last-child > img { margin-right: 5px; }
+
+/* 내용 */
+#complainCounsel > div { padding: 15px; }
+
+/* 만족도 조사 */
+#radioList > label { display: inline-flex; }
+#radioList > label:not(:last-child) { margin-right: 20px; }
+
+/* 페이지 만족도의 라디오 형식의 체크 리스트 */
+input[type="radio"] { appearance: auto; }
+
+/* 텍스트 박스 */
+#textBox { align-items: end; }
+
+#textBox > textarea {
+    width: 675px; height: 100px;
+    padding: 15px;
+    border: 1px solid var(--line-color);
+    margin: 0;
+    outline: none;
+
+    font: inherit;
+    
+    resize: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* ------------------------------ */
+
+/* 주요 누리집 바로가기 */
+#mainWebSite {
+    width: 210px; height: auto;
+    padding: 15px;
+    background-color: var(--light-gray-color);
+}
+
+/* 제목 */
+#mainWebSite > h2 { color: var(--sub-color); }
+
+/* 주요 누리집 항목 */
+#mainWebSiteList > li:not(:last-child) { margin-bottom: 20px; }
+#mainWebSiteList > li > a { display: inline-block; }
+
+/* 주요 누리집 항목 마우스 효과 */
+#mainWebSiteList > li > a:hover,
+#mainWebSiteList > li > a:focus-visible {
+    font-weight: var(--font-weight-Medium);
+    text-decoration: underline;
+}
